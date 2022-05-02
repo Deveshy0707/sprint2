@@ -1,0 +1,28 @@
+package com.trainingapps.stockapp.orderms;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+/*
+ * @EnableEurekaClient tells Spring Boot to use Spring Eureka for service discovery explicitly.
+ */
+
+//@EnableEurekaClient
+@EnableDiscoveryClient
+@SpringBootApplication
+public class DemoApplication {
+
+	public static void main(String[] args) {
+
+	    SpringApplication.run(DemoApplication.class, args);
+
+	}
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
+}
